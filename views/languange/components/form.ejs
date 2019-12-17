@@ -1,0 +1,15 @@
+<form method="POST">
+    <label style="margin-top:0;">
+        <h1>Select bot languange</h1>
+    </label>
+    <label>
+        <select multiple class="input border" name="LanguangesId[]" >
+            <% langs.forEach(leng => { %>
+                <option value="<%= leng.id %>"> <%= leng.name %> </option>
+            <% }) %>
+        </select>
+        <div class="line"></div>
+        </div>
+    </label>
+    <button type="submit" >next</button>
+</form>
