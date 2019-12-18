@@ -91,6 +91,9 @@ module.exports = (sequelize, DataTypes) => {
       beforeCreate: (user, options) => {
         user.secret =  String(Math.random() * 10000)
         user.password = hashPassword(user.secret, user.password)
+      },
+      beforeUpdate(user, options){
+        user.password = hashPassword(user.secret, user.password)
       }
     },
     sequelize 

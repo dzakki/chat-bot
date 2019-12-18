@@ -1,0 +1,73 @@
+<div class="row">
+    <div class="col-xs-12 col-md-8 col-lg-8">
+        <div class="card bg-transparent" >
+            <div class="card-body">
+                <h5 class="card-title text-center">Profile</h5>
+                <form method="post">
+                    <div class="form-group row">
+                        <label for="name" class="col-sm-2 col-form-label">Name</label>
+                        <div class="col-sm-10">
+                        <input type="text"  class="form-control-plaintext border-bottom shadow-sm " name="name" id="name" value="<%= user.name %>">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="username" class="col-sm-2 col-form-label">Username</label>
+                        <div class="col-sm-10">
+                        <input type="text"  class="form-control-plaintext border-bottom shadow-sm "  name="username" id="username" value="<%= user.username %>">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="email" class="col-sm-2 col-form-label">Email</label>
+                        <div class="col-sm-10">
+                        <input type="email"  class="form-control-plaintext border-bottom shadow-sm " id="email"  name="email" value="<%= user.email %>">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="email" class="col-sm-2 col-form-label">Gender</label>
+                        <div class="col-sm-10">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="gender" id="gridRadios1" value="male" <%- user.gender === 'male' ? 'checked': null %> >
+                                    <label class="form-check-label" for="gridRadios1">
+                                        male
+                                    </label>
+                                </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="gender" id="gridRadios2" value="female"  <%- user.gender === 'female' ? 'checked': null %>>
+                                <label class="form-check-label" for="gridRadios2">
+                                    female
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group text-right">
+                        <button type="submit" class="btn btn-light">Save</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-12 col-md-4 col-lg-4">
+            <div class="card bg-transparent">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Password</h5>
+                    <form method="post" action="user/change-password">
+                        <div class="form-group">
+                            <label for="oldPassword">Old password</label>
+                            <input type="password" class="form-control-plaintext border-bottom shadow-sm " name="oldPassword" id="oldPassword">
+                        </div>
+                        <div class="form-group">
+                            <label for="newPassword">New password</label>
+                            <input type="password" class="form-control-plaintext border-bottom shadow-sm " name="newPassword" id="newPassword">
+                        </div>
+                        <div class="form-group">
+                            <label for="newPasswordVerif">New password verify</label>
+                            <input type="password" class="form-control-plaintext border-bottom shadow-sm " name="newPasswordVerif" id="newPasswordVerif">
+                        </div>
+                        <div class="form-group text-right">
+                            <button type="submit" class="btn btn-light">Change passowrd</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+    </div>
+</div>
