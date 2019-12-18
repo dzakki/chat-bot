@@ -2,10 +2,9 @@
 
 <div class="card" style="margin-top: 5vh;">
     <div class="card-body">
-
         <% langs[0].Languanges.forEach(lang => { %>
             <div class="form-check" style="color: white;">
-                <input class="form-check-input" type="radio" name="languange" id="<%= lang.kode %>" value="<%= lang.kode %>" checked>
+                <input class="form-check-input" type="radio" name="langKode" id="<%= lang.kode %>" value="<%= lang.kode %>">
                 <label class="form-check-label" for="<%= lang.kode %>">
                     <%= lang.name %>
                 </label>
