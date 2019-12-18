@@ -1,8 +1,9 @@
 const authRoute = require('./authRoute')
 const languangeRoute = require('./languangeRoute')
-const userRoute = require('./userRoute')
+const botRoute = require('./botRoutes')
+
 module.exports = {
     authRoute,
     languangeRoute,
-    userRoute
+    botRoute
 }

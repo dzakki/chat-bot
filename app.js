@@ -4,19 +4,10 @@ const port = 3000
 app.use(express.urlencoded({ extended: true })) 
 app.set('view engine', 'ejs');
 
-const { authRoute, languangeRoute, userRoute } = require('./routes')
+const { authRoute, languangeRoute, botRoute } = require('./routes')
 const BotController = require('./controllers/botController')
 
-app.get('/', (req, res) => {
-    res.send(`
-        <form method="post">
-        <input type="submit" value="submit">
-        </form>
-    `)
-})
-app.post('/', (req, res) => {
-    BotController.addBot(req, res)
-})
+app.use('/bot', botRoute)
 
 app.use('/languange', languangeRoute)
 

@@ -1,4 +1,4 @@
-const { Bot } = require('../models')
+const { Bot, User, Languange } = require('../models')
 class BotController {
 
     static addBot(req, res){
@@ -21,7 +21,24 @@ class BotController {
             }
             console.log(body)
         })
+    }
 
+    static getBot(req, res){
+        let where = {
+            id: 1
+        }
+        User
+            .findAll({
+                where: where,
+                include: [Languange]
+            })
+            .then(langs => {    
+                // res.send(langs)
+                res.render('bot/bot', { langs: langs})
+            })
+            .catch(errs => {
+                res.send(errs)
+            })
     }
 
 }
