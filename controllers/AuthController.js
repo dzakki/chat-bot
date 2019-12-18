@@ -18,10 +18,10 @@ class AuthController{
                 if (user) {
                     let password = hashPassword(user.secret, req.body.password)
                     if (password === user.password) {
-                        res.redirect('/')   
+                        res.redirect('/bot')   
                     }
                 }
-                res.redirect('/auth?msgError=' + 'email or password wrong')   
+                res.redirect('/?msgError=' + 'email or password wrong')   
             })
             .catch(errs => {
                 console.log(errs)
@@ -34,14 +34,14 @@ class AuthController{
         User
             .create(params)
             .then(student => {
-                res.redirect('/auth/register?msgSuccess='+ 'succes registered')
+                res.redirect('/languange?msgSuccess='+req.body.name)
             })
             .catch(errs => {
                 let errors = []
                 errs.errors.forEach(error => {
                     errors.push(error.message)
                 });
-                res.redirect('/auth/register?msgError='+ errors)
+                res.redirect('/languange')
             })
     }
 }

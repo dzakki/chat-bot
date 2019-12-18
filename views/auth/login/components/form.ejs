@@ -1,32 +1,43 @@
-<form method="POST">
-    <label style="margin-top:0;">
-        <h1>Login</h1>
-    </label>
-    <% if(errors) { %>
-    <div class="alert alert-warning alert-dismissible fade show" role="alert">
-        <strong>Errors!</strong> <%= errors %>
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-        </button>
+<div class="row">
+    <div class="col col-4">
+        <div class="box-form">
+            
+        </div>
     </div>
-    <% } %>
-    <label>
-        <p class="label-txt">ENTER YOUR EMAIL OR USERNAME</p>
-        <input type="text" class="input" name="emailOrUsername" required>
-        <div class="line-box">
-        <div class="line"></div>
+    <div class="col col-8">
+        <div class="box-form">
+            <form method="POST">
+                <label style="margin-top:0;">
+                    <h1>Login</h1>
+                </label>
+                <% if(errors) { %>
+                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                    <strong>Errors!</strong> <%= errors %>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <% } %>
+                <label>
+                    <p class="label-txt">EMAIL OR USERNAME</p>
+                    <input type="text" class="input" name="emailOrUsername" required>
+                    <div class="line-box">
+                    <div class="line"></div>
+                    </div>
+                </label>
+                <label>
+                    <p class="label-txt">PASSWORD</p>
+                    <input type="password" class="input" name="password" required>
+                    <div class="line-box">
+                    <div class="line"></div>
+                    </div>
+                </label>
+                <button type="submit" >SUBMIT</button>
+            
+                <label style="margin: 2px; bottom: 0;">
+                    <span> <small>Haven't registered?  <a href="/register">Click Here!</a></small> </span>
+                </label>
+            </form>
         </div>
-    </label>
-    <label>
-        <p class="label-txt">ENTER YOUR PASSWORD</p>
-        <input type="password" class="input" name="password" required>
-        <div class="line-box">
-        <div class="line"></div>
-        </div>
-    </label>
-    <button type="submit" >submit</button>
-
-    <label style="margin: 2px; bottom: 0;">
-        <span> <small>Haven't registered?  <a href="/auth/register">here</a></small> </span>
-    </label>
-</form>
+    </div>
+</div>
