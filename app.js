@@ -15,8 +15,8 @@ app.get('/', (req, res) => {
     `)
 })
 app.post('/', (req, res) => {
-    BotController.addBot(req, res, app)
-} )
+    BotController.addBot(req, res)
+})
 
 app.use('/languange', languangeRoute)
 

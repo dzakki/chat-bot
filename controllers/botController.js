@@ -3,7 +3,7 @@ class BotController {
 
     static addBot(req, res){
         const request = require('request')
-        let quest = 'hai aku jombloe'
+        let quest = 'sok pinter lu bot'
         let lang = 'id'
         const options = {
             url: 'https://wsapi.simsimi.com/190410/talk?utext='+quest+'&lang='+lang,
