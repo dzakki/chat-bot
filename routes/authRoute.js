@@ -1,13 +1,23 @@
-var express = require('express')
-var router = express.Router()
+const express = require('express')
+const router = express.Router()
+const AuthController = require('../controllers/AuthController')
 
+// router.get('/', AuthController.getAll)
 // define the home page route
 router.get('/', function (req, res) {
-  res.send('login')
+    let options = {
+        errors: req.query.msgError || null
+    }
+    res.render('auth/login', options)
 })
+router.post('/', AuthController.login)
 // define the about route
 router.get('/register', function (req, res) {
-  res.send('Register')
+    let options = {
+        errors: req.query.msgError || null
+    }
+    res.render('auth/register', options)
 })
+router.post('/register', AuthController.register)
 
 module.exports = router

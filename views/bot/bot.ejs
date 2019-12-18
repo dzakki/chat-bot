@@ -1,103 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <title>Bot Page</title>
-
-    <style>
-        .box-chat{
-            width: 80%;
-            height: 80%;
-            border: 2px solid black;
-            align-content: center;
-            padding: 5vh;
-            margin: auto;
-            margin-top: 4vh;
-        }
-        .container{
-            border: 2px solid black;
-            height: 100vh;
-        }
-        .text-box{
-            align-content: center;
-            width: 80%;
-            margin: auto;
-            margin-top: 3vh;
-        }
-        .button-text{
-            align-content: center;
-            width: 80%;
-            margin: auto;
-            text-align: center;
-            margin-top: 2vh;
-        }
-        #head{
-            text-decoration: underline;
-            width: 100%;
-        }
-        .append-left{
-            float: left;
-        }
-        .append-right{
-            float: right;
-        }
-        .text-msg{
-            display: block;
-        }
-    </style>
-</head>
+    <%- include('components/head') %>
 <body>
-    <div class="container-fluid">
-        <div class="container">
-            <div class="box-chat">
-                <h3 id="head">Chat Message Bot</h3>
-                <div class="text-msg">
-                    <div class="append-left">
-                        <h5>user name</h5>
-                        <h3>Test message</h3>
-                    </div>
-                    <br><br><br>
-                    <div class="append-right">
-                        <h5>Im Bot</h5>
-                        <h3>Test message</h3>
-                    </div>
-                    <br><br><br>
-                    <div class="append-left">
-                        <h5>user name</h5>
-                        <h3>Test message</h3>
-                    </div>
-                    <br><br><br>
-                    <div class="append-right">
-                        <h5>Im Bot</h5>
-                        <h3>Test message</h3>
-                    </div>
-                </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-md-4 col-lg-4">
+                <%- include('components/select') %>
             </div>
-
-            <div class="text-box">
-                <div class="form-group">
-                    <input id="message" class="form-control" id="msgText" type="text" name="message" placeholder="Your messages here...">
-                    <div class="button-text">
-                        <button type="button" class="btn btn-primary" style="width: 80%;" id="addText">Say it!</button>
-                    </div>
-                </div>
+            <div class="col-xs-12 col-md-8 col-lg-8">
+                <%- include('components/bot') %>
             </div>
         </div>
+        
     </div>
-
-    <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.9.0.min.js"></script>
-    <script type="text/javascript">
-        $(function() {
-        $("#addText").click(function() {
-            msg = document.querySelector('#msgText').value;
-            div = document.createElement('div');
-            $(div).addClass("append-left").html(msg);
-            $(".text-msg").append(div);
-            });
-    });
-</script>
+    
+    <%- include('components/script') %>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 </body>
 </html>
