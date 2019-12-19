@@ -9,8 +9,9 @@ class LangController{
             ],
          })
          .then(langs => {
+            let msg = (req.query.msgSuccess)
             // res.send(langs)
-            res.render('languange', { langs })
+            res.render('languange', { langs:langs, msg:msg })
          })
          .catch(errs => res.send(errs))
     }
@@ -26,7 +27,7 @@ class LangController{
         UserLanguange
             .bulkCreate(data)
             .then(userLanguange => {
-                // res.send(userLanguange) 
+                res.send(userLanguange) 
                 res.redirect('/')
             })
             .catch(errs => {
