@@ -26,8 +26,7 @@ class LangController{
         });
         UserLanguange
             .bulkCreate(data)
-            .then(userLanguange => {
-                res.send(userLanguange) 
+            .then(userLanguange => { 
                 res.redirect('/')
             })
             .catch(errs => {
