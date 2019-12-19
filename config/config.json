@@ -3,7 +3,7 @@
     "username": "postgres",
     "password": "root",
     "database": "chat_bot",
-    "host": "127.0.0.1",
+    "host": "localhost",
     "dialect": "postgres"
   }
 }

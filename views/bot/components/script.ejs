@@ -1,6 +1,10 @@
 <script>
     	$(document).ready(function(){
-            var div = $("#msg_card_body");
-            div.scrollTop(div.prop('scrollHeight'));
+                var div = $("#msg_card_body");
+                div.scrollTop(div.prop('scrollHeight'));
+                        
+                $('#action_menu_btn').click(function(){
+                        $('.action_menu').toggle();
+                });    
         });
 </script>

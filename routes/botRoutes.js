@@ -6,5 +6,6 @@ router.get('/', BotController.getBot)
 router.post('/', (req, res) => {
     BotController.addBot(req, res)
 })
-
+router.get('/delete-history', BotController.deleteHistoryChat)
+router.get('/backup-history', BotController.backUpChat)
 module.exports = router

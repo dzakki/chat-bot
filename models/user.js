@@ -38,9 +38,9 @@ module.exports = (sequelize, DataTypes) => {
         return User.findOne(options)
                    .then(user => {
                      if (user && (self.id && self.id !== user.id)) {
-                       throw new Error('email has been user')
+                       throw new Error('username has been used')
                      }else if (user && !self.id) {
-                      throw new Error('email has been user')
+                      throw new Error('username has been used')
                      }
                    })
       }  

@@ -17,23 +17,27 @@ class LangController{
     }
 
     static postUserLang(req,res){
-        let data = []
-        req.body.LanguangesId.forEach(LanguangeId => {
-            data.push({
-                LanguangeId: LanguangeId,
-                UserId: 1
-            })
-        });
-        UserLanguange
-            .bulkCreate(data)
-            .then(userLanguange => {
-                res.send(userLanguange) 
-                res.redirect('/')
-            })
-            .catch(errs => {
-                res.send(errs) 
-            })
+        if (!req.body.LanguangesId) {
+            res.redirect('/bot')
+        }else{
+            let data = []
+            req.body.LanguangesId.forEach(LanguangeId => {
+                data.push({
+                    LanguangeId: LanguangeId,
+                    UserId: req.session.userId
+                })
+            });
+            UserLanguange
+                .bulkCreate(data)
+                .then(userLanguange => {
+                    // res.send(userLanguange) 
+                    res.redirect('/bot')
+                })
+                .catch(errs => {
+                    res.send(errs) 
+                })
         }
+    }
 }
 
 module.exports = LangController

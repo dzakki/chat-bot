@@ -4,7 +4,9 @@ const AuthController = require('../controllers/AuthController')
 
 // router.get('/', AuthController.getAll)
 // define the home page route
-router.get('/', function (req, res) {
+const isNotLogin = require('../middlewares/isNotLogin')
+
+router.get('/', isNotLogin ,function (req, res) {
     let options = {
         errors: req.query.msgError || null
     }
@@ -12,12 +14,18 @@ router.get('/', function (req, res) {
 })
 router.post('/', AuthController.login)
 // define the about route
-router.get('/register', function (req, res) {
+router.get('/register' , isNotLogin ,function (req, res) {
     let options = {
         errors: req.query.msgError || null
     }
     res.render('auth/register', options)
 })
 router.post('/register', AuthController.register)
+router.get('/logout', (req, res) => {
+    req.session.destroy(function(err) {
+        // cannot access session here
+    })
+    res.redirect('/')
+})
 
 module.exports = router
