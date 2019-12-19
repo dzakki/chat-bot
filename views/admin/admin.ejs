@@ -5,12 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <style>
+        body{
+            background-image: url('https://cdn-gcp.marutitech.com/wp-media/2017/08/7-reasons-why-your-business-needs-a-Chatbot-1.jpg');
+		    background-size: cover;
+        }
+        *{
+            color: white;
+        }
+        td{
+            background-color: rgb(2, 14, 49);
+        }
+    </style>
     <title>Admin Page || Users List</title>
 </head>
 <body>
     <%- include('../partial/nav') %>
-    <div class="container-fluid">
+    <div class="container">
         <h1 style="text-align: center;">Users Data</h1>
+        <% if(msg) { %>
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <strong>Success!</strong> <%= msg %>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        <% } %>
         <table class="table">
                 <thead class="thead-dark">
                     <tr>

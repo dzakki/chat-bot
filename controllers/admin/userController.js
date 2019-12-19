@@ -4,7 +4,8 @@ class AdminController{
     static showTable(req,res){
         User.findAll({order: [['id', 'asc']]})
         .then(data=>{
-            res.render('admin/admin',{data})
+            let msg = req.query.msg
+            res.render('admin/admin',{data:data, msg:msg})
         })
         .catch(err=>{
             res.send(err)
@@ -15,7 +16,7 @@ class AdminController{
         let id = req.params.id
         User.destroy({where : {id:id}})
         .then(() => {
-            res.redirect('/admin')
+            res.redirect('/admin?msg='+'User has been deleted!')
         })
         .catch(err => {
             res.send(err)

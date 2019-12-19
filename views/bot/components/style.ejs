@@ -1,11 +1,10 @@
 <style>
 	body,html{
-			height: 100%;
-			margin: 0;
-			background: #C5E1A5;
-	       	background: -webkit-linear-gradient(to right, #91EAE4, #C5E1A5, rgb(139, 253, 117));
-	        background: linear-gradient(to right, #91EAE4, #C5E1A5, rgb(139, 253, 117));
-		}
+		height: 100%;
+		margin: 0;
+		background-image: url('https://hackernoon.com/drafts/unha26zu.png');
+		background-size: cover;
+	}
 
     .chat{
         margin-top: auto;
@@ -34,16 +33,6 @@
 	}
     .container{
         align-content: center;
-    }
-    .search{
-        border-radius: 15px 0 0 15px !important;
-        background-color: rgba(0,0,0,0.3) !important;
-        border:0 !important;
-        color:white !important;
-    }
-    .search:focus{
-		box-shadow:none !important;
-        outline:0px !important;
     }
     .type_msg{
         background-color: rgba(0,0,0,0.3) !important;
@@ -104,9 +93,6 @@
 		right: 0.4em;
 		border:1.5px solid white;
 	}
-	.offline{
-		background-color: #c23616 !important;
-	}
 	.user_info{
 		margin-top: auto;
 		margin-bottom: auto;
@@ -149,6 +135,43 @@
 	}
 	#select-card{
 		padding: 4vh;
+	}
+	#action_menu_btn{
+		position: absolute;
+		right: 10px;
+		top: 10px;
+		color: white;
+		cursor: pointer;
+		font-size: 20px;
+	}
+	.action_menu{
+		z-index: 1;
+		position: absolute;
+		padding: 15px 0;
+		background-color: rgba(0,0,0,0.5);
+		color: white;
+		border-radius: 15px;
+		top: 30px;
+		right: 15px;
+		display: none;
+	}
+	.action_menu ul{
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+	.action_menu ul li{
+		width: 100%;
+		padding: 10px 15px;
+		margin-bottom: 5px;
+	}
+	.action_menu ul li i{
+		padding-right: 10px;
+	
+	}
+	.action_menu ul li:hover{
+		cursor: pointer;
+		background-color: rgba(0,0,0,0.2);
 	}
 	@media(max-width: 576px){
 	.contacts_card{
